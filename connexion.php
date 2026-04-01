@@ -13,7 +13,7 @@
     require_once "header.php";
     ?>
     <main>
-        <form action="connexion" method="post">
+        <form action="connexion.php" method="post">
             <fieldset>
                 <h2>Accès à votre compte</h2>
 

@@ -1,6 +1,28 @@
+ <?php
+    class Inscription {
+        private String $Nom;
+        private String $Prenom;
+        private String $Email;
+        private String $Password;
+        public function __construct(String $Nom, String $Prenom, String $Email, String $Password ) {
+            if (!empty($Nom)) {
+                $this->Nom = $Nom;   
+            }
+            if (!empty($Prenom)) {
+                $this->Prenom = $Prenom;
+            }
+            if (!empty($Email)) {
+                $this->Email = $Email;
+            }
+            if (!empty($Password)) {
+                $this->Password = $Password;
+            }   
+        }
+            
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +35,7 @@
     require_once "header.php";
    ?>
     <main>
-        <form action="connexion" method="post">
+        <form action="inscription.php" method="post">
             <fieldset>
                 <h2>inscription</h2>
 

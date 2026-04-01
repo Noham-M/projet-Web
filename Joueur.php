@@ -20,9 +20,9 @@
             <h3>jeu de prédilection : valorant</h3>
             <h3>age : 25ans</h3>
             <p><strong>biographie : </strong>jeune talent venant de Liège Jean Permatête du haut de ses 25ans vien montrer pourquoi on le surnomme le meilleur support de wallonie </p>
-            <a href="prestationEx.html">prestation 1 : scène valorant (8h-10h) </a>
-            <a href="prestationEx.html">prestation 2 : espace détente (12h-13h) </a>
-            <a href="prestationEx.html">prestation 3 : à programmer </a>
+            <a href="prestationEx.php">prestation 1 : scène valorant (8h-10h) </a>
+            <a href="prestationEx.php">prestation 2 : espace détente (12h-13h) </a>
+            <a href="prestationEx.php">prestation 3 : à programmer </a>
             </div>
             
 
