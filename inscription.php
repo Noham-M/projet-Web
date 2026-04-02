@@ -1,28 +1,57 @@
- <?php
-    class Inscription {
-        private String $Nom;
-        private String $Prenom;
-        private String $Email;
-        private String $Password;
-        public function __construct(String $Nom, String $Prenom, String $Email, String $Password ) {
-            if (!empty($Nom)) {
-                $this->Nom = $Nom;   
-            }
-            if (!empty($Prenom)) {
-                $this->Prenom = $Prenom;
-            }
-            if (!empty($Email)) {
-                $this->Email = $Email;
-            }
-            if (!empty($Password)) {
-                $this->Password = $Password;
-            }   
+<?php
+class Inscription
+{
+    private string $Nom;
+    private string $Prenom;
+    private string $Email;
+    private string $Password;
+    public function __construct(string $Nom, string $Prenom, string $Email, string $Password)
+    {
+        if (!empty($Nom)) {
+            $this->Nom = $Nom;
         }
-            
+        if (!empty($Prenom)) {
+            $this->Prenom = $Prenom;
+        }
+        if (!empty($Email)) {
+            $this->Email = $Email;
+        }
+        if (!empty($Password)) {
+            $this->Password = $Password;
+        }
     }
+    public function getNom(): string
+    {
+        return $this->Nom;
+    }
+    public function getPrenom(): string
+    {
+        return $this->Prenom;
+    }
+    public function getEmail(): string
+    {
+        return $this->Email;
+    }
+    public function getPassword(): string
+    {
+        return $this->Password;
+    }
+
+
+}
+$Utilisateur = null;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$Nom = $_POST['user_name'] ?? "";
+$Prenom = $_POST['user_surname'] ?? "";
+$Email = $_POST['user_email'] ?? "";
+$Password = $_POST['user_password'] ?? "";
+$Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,9 +60,9 @@
 </head>
 
 <body>
-   <?php
+    <?php
     require_once "header.php";
-   ?>
+    ?>
     <main>
         <form action="inscription.php" method="post">
             <fieldset>
