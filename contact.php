@@ -9,10 +9,9 @@
 </head>
 
 <body>
-    <header>
-       <?php
-       require_once 'header.php'
-       ?>
+    <?php
+    require_once 'header.php'
+        ?>
     <main>
         <form action="connexion" method="post">
             <fieldset>
@@ -41,7 +40,7 @@
             </fieldset>
         </form>
     </main>
-    <?php 
+    <?php
     require_once 'footer.php';
     ?>
 </body>

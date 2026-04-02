@@ -1,3 +1,7 @@
+<?php
+$filtreScene = $_GET["scène"];
+$filtreHeure = $_GET["Heure"];
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
