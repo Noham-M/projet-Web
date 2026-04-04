@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    require_once "header.php";
+    require_once "app/view/header.php";
     ?>
     <main>
         <article id="presentationEvenement">
@@ -76,7 +76,7 @@
         </table>
     </main>
     <?php
-    require_once "footer.php";
+    require_once "app/view/footer.php";
     ?>
 </body>
 

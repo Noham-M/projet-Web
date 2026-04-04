@@ -61,7 +61,7 @@ $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
 
 <body>
     <?php
-    require_once "header.php";
+    require_once "app/view/header.php";
     ?>
     <main>
         <form action="inscription.php" method="post">
@@ -92,7 +92,7 @@ $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
         </form>
     </main>
     <?php
-    require_once "header.php";
+    require_once "app/view/footer.php";
     ?>
 </body>
 

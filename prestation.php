@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    require_once "header.php";
+    require_once "app/view/header.php";
     ?>
 
     <main>
@@ -110,7 +110,7 @@
             </section>
     </main>
     <?php
-    require_once "footer.php";
+    require_once "app/view/footer.php";
     ?>
 </body>
 

@@ -1,7 +1,4 @@
-<?php
-$filtreScene = $_GET["scène"];
-$filtreHeure = $_GET["Heure"];
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,10 +8,14 @@ $filtreHeure = $_GET["Heure"];
     <title>Journée Tournoi LAN jeux-vidéo</title>
     <link rel="stylesheet" href="css/Style.css">
 </head>
+<?php
+$filtreScene = $_GET['scène'];
+$filtreHeure = $_GET['Heure'];
+?>
 
 <body>
     <?php
-    require_once "header.php";
+    require_once "app/view/header.php";
     ?>
     <main>
         <h2>Liste des joueurs</h2>
@@ -119,7 +120,7 @@ $filtreHeure = $_GET["Heure"];
         </div>
     </main>
     <?php
-    require_once "footer.php";
+    require_once "app/view/footer.php";
     ?>
 </body>
 

@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    require_once "header.php";
+    require_once "app/view/header.php";
     ?>
     <main>
         <h2>Jean Permatête</h2>
@@ -29,7 +29,7 @@
         </article>
     </main>
     <?php
-    require_once "footer.php";
+    require_once "app/view/footer.php";
     ?>
 </body>
 
