@@ -1,4 +1,8 @@
+<?php
+$FiltreScene = $_GET['scene'];
+$filtreHeure = $_GET['Heure'];
 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,10 +12,7 @@
     <title>Journée Tournoi LAN jeux-vidéo</title>
     <link rel="stylesheet" href="css/Style.css">
 </head>
-<?php
-$filtreScene = $_GET['scène'];
-$filtreHeure = $_GET['Heure'];
-?>
+
 
 <body>
     <?php
@@ -19,13 +20,13 @@ $filtreHeure = $_GET['Heure'];
     ?>
     <main>
         <h2>Liste des joueurs</h2>
-        <form action="#" method="GET" class="filter">
+        <form action="ListeDesJoueur.php" method="GET" class="filter">
 
             <fieldset>
                 <legend>Filtrer les participants</legend>
                 <div class="filterGroup">
                 <label for="scène">Choisissez une scène</label>
-                <select name="scène" id="scène">
+                <select name="scene" id="scene">
                     <option value="">Toutes les scènes</option>
                     <option value="valorant">Scène Valorant</option>
                     <option value="csgo">Scène Counter-Strike</option>
@@ -51,7 +52,6 @@ $filtreHeure = $_GET['Heure'];
         </form>
 
         <div class="ListeVignette">
-
             <a href="Joueur.php" class="vignette">
 
                 <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
