@@ -1,3 +1,22 @@
+<?php
+$nom = '';
+$prenom = '';
+$Email = '';
+$object = '';
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'Post') {
+    $nom = trim($_POST['user_name'] ?? '');
+    $prenom = trim($_POST['user_surname'] ?? '');
+    $Email = trim($_POST['user_email'] ?? '');
+    $object = trim($_POST['message_object'] ?? '');
+    $message = trim($_POST['user_message'] ?? '');
+}
+
+if (empty($nom)) {
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

@@ -25,7 +25,7 @@ $filtreHeure = $_GET['Heure'];
             <fieldset>
                 <legend>Filtrer les participants</legend>
                 <div class="filterGroup">
-                <label for="scène">Choisissez une scène</label>
+                <label for="scene">Choisissez une scène</label>
                 <select name="scene" id="scene">
                     <option value="">Toutes les scènes</option>
                     <option value="valorant">Scène Valorant</option>
