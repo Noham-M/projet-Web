@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
 header {
     display: flex;
     background-color: #020A0D;
@@ -30,17 +31,32 @@ a.SeConnecter {
     box-shadow: #79CFD9 0 0 10px;
     background-color:#1C4859;
     font-size: small;
-    transition: transform 0.3s ease
+    transition: 0.3s ease
 }
 a.SeConnecter:hover {
     transform: scale(1.1);
-    cursor: pointer;
+    
 }
 
 #Titre {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#Titre p {
+   margin-right: 0.3rem ;
+    border-radius: 15px;
+    border: #79CFD9 solid 2px;
+    box-shadow: #79CFD9 0 0 10px;
+    background-color:#1C4859;
+    font-size: small;
+    transition: 0.3s ease
+
+}
+
+#Titre p {
+    transform: scale(1.1);
 }
 
 nav {
@@ -140,10 +156,10 @@ td:hover {
 }
 
 form {
-    margin: 2rem;
+    margin: 4rem 2rem 4rem 2rem;
     padding: 1rem;
     border: #79CFD9 solid 2px;
-    box-shadow: #79CFD9 0 0 20px;
+    box-shadow: #79CFD9 0 0 10px;
     display: flex;
     width: 50%;
     height: 100%;

@@ -1,8 +1,4 @@
-<?php
-$FiltreScene = $_GET['scene'];
-$filtreHeure = $_GET['Heure'];
 
-?>
 <!DOCTYPE html>
 <html lang="fr">
 
