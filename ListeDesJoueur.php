@@ -1,45 +1,90 @@
 <?php
-class Joueur {
-    private String $nom;
-    private int $Heure;
-    private String $scene;
-    private String $description;
+class Joueur
+{
+    private string $nom;
+    private int $Heure1;
 
-     public function __construct(String $nom, String $scene, int $heure, String $description) {
+    private int $Heure2;
+    private string $scene;
+    private string $description;
+
+    public function __construct(string $nom, string $scene, int $heure1, int $heure2, string $description)
+    {
         $this->setNom($nom);
         $this->setScene($scene);
         $this->setDescription($description);
+        $this->setHeure1($heure1);
+        $this->setHeure2($heure2);
     }
 
-    public function setNom(String $nom) {
+    public function setNom(string $nom)
+    {
         if (empty($nom)) {
             throw new InvalidArgumentException("le nom ne peut pas être null ou vide");
         }
-        $this->nom;
+        $this->nom = $nom;
     }
 
-     public function setScene(String $scene) {
+    public function setScene(string $scene)
+    {
         if (empty($scene)) {
             throw new InvalidArgumentException("la scene ne peut pas être null ou vide");
         }
-        $this->nom;
+        $this->scene = $scene;
     }
 
-     public function setDescription(String $description) {
+    public function setDescription(string $description)
+    {
         if (empty($description)) {
             throw new InvalidArgumentException("la description ne peut pas être null ou vide");
         }
-        $this->nom;
+        $this->description = $description;
     }
 
-    public function setHeure(int $heure) {
+    public function setHeure1(int $heure)
+    {
         if ($heure < 8 || $heure > 15) {
             throw new InvalidArgumentException("l'heure doit être entre 8 et 15");
         }
-        $this->Heure = $heure;
+        $this->Heure1 = $heure;
     }
 
+    public function setHeure2(int $heure)
+    {
+        if ($heure < 8 || $heure > 15) {
+            throw new InvalidArgumentException("l'heure doit être entre 8 et 15");
+        }
+        $this->Heure2 = $heure;
+    }
+    public function getheure1(): int
+    {
+        return $this->Heure1;
+    }
+    public function getheure2(): int
+    {
+        return $this->Heure2;
+    }
+    public function getName(): string
+    {
+        return $this->nom;
+    }
+    public function getScense(): string
+    {
+        return $this->scene;
+    }
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+
 }
+$allPlayer = [
+    new Joueur("jean permatete", "valorant", 8, 10, "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
+    new Joueur("Eva mChercherUneBierre", "csgo", 10, 12, "joueuse competitive elle est la pour révolutionner l'art de l'awp sur csgo"),
+    new Joueur("JuJuCactus", "Overwatch", 13, 15, "Joueuse Dps sur Overwatch, elle est venue parce qu'il manquait des joueurs"),
+    new Joueur("XxGalaxyDestroyerxX", "Overwatch", 13, 15, "Joueur support sur overwatch il est la pour concurencer tout les support de ce tournoi")
+];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -63,25 +108,25 @@ class Joueur {
             <fieldset>
                 <legend>Filtrer les participants</legend>
                 <div class="filterGroup">
-                <label for="scene">Choisissez une scène</label>
-                <select name="scene" id="scene">
-                    <option value="">Toutes les scènes</option>
-                    <option value="valorant">Scène Valorant</option>
-                    <option value="csgo">Scène Counter-Strike</option>
-                    <option value="Zen">Espace détente</option>
-                    <option value="Overwatch">Scène Overwatch</option>
-                </select>
+                    <label for="scene">Choisissez une scène</label>
+                    <select name="scene" id="scene">
+                        <option value="">Toutes les scènes</option>
+                        <option value="valorant">Scène Valorant</option>
+                        <option value="csgo">Scène Counter-Strike</option>
+                        <option value="Zen">Espace détente</option>
+                        <option value="Overwatch">Scène Overwatch</option>
+                    </select>
                 </div>
                 <div class="filterGroup">
-                <label for="Heure">Choisissez une heure</label>
-                <select name="Heure" id="Heure">
-                    <option value="">Toutes les heures</option>
-                    <option value="8h">8h-10h</option>
-                    <option value="10h">10h-12h</option>
-                    <option value="12h">12h-13h</option>
-                    <option value="13h">13h-15h</option>
-                    <option value="15h">15h-18h</option>
-                </select>
+                    <label for="Heure">Choisissez une heure</label>
+                    <select name="Heure" id="Heure">
+                        <option value="">Toutes les heures</option>
+                        <option value="8h">8h-10h</option>
+                        <option value="10h">10h-12h</option>
+                        <option value="12h">12h-13h</option>
+                        <option value="13h">13h-15h</option>
+                        <option value="15h">15h-18h</option>
+                    </select>
                 </div>
 
                 <button type="submit" id="bouttonFiltre">Rechercher</button>
@@ -90,70 +135,18 @@ class Joueur {
         </form>
 
         <div class="ListeVignette">
-            <a href="Joueur.php" class="vignette">
+            <?php
+            foreach ($allPlayer as $value) {
+                echo "<a href='Joueur.php' class='vignette'>
 
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
+                <img src='img/racing-6249392_1280.jpg' alt='Portrait de Jean Permatête'>
+                <h3>" . $value->getName() . "</h3>
 
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays.</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
-            <a href="Joueur.php" class="vignette">
-
-                <img src="img/racing-6249392_1280.jpg" alt="Portrait de Jean Permatête">
-                <h3>Jean Permatête</h3>
-
-                <p><strong>Présence :</strong> 8h-10h (Valorant) et 12h-13h (Espace Zen).</p>
-                <p>Description du joueur...</p>
-            </a>
+                <p><strong>Présence :</strong>" . $value->getheure1() . "h" . $value->getheure2() . "h  (" . $value->getScense() . ") .</p>
+                <p>" . $value->getDescription() . "</p>
+            </a>";
+            }
+            ?>
 
         </div>
     </main>
