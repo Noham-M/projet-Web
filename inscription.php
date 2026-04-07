@@ -44,8 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $Nom = $_POST['user_name'] ?? "";
 $Prenom = $_POST['user_surname'] ?? "";
 $Email = $_POST['user_email'] ?? "";
+if (!filter_var($Email,FILTER_VALIDATE_EMAIL)) {
+    $Email = "";
+    echo "l'Email n'est pas valide";
+}
 $Password = $_POST['user_password'] ?? "";
 $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
+
 }
 
 ?>

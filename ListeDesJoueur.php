@@ -1,4 +1,46 @@
+<?php
+class Joueur {
+    private String $nom;
+    private int $Heure;
+    private String $scene;
+    private String $description;
 
+     public function __construct(String $nom, String $scene, int $heure, String $description) {
+        $this->setNom($nom);
+        $this->setScene($scene);
+        $this->setDescription($description);
+    }
+
+    public function setNom(String $nom) {
+        if (empty($nom)) {
+            throw new InvalidArgumentException("le nom ne peut pas être null ou vide");
+        }
+        $this->nom;
+    }
+
+     public function setScene(String $scene) {
+        if (empty($scene)) {
+            throw new InvalidArgumentException("la scene ne peut pas être null ou vide");
+        }
+        $this->nom;
+    }
+
+     public function setDescription(String $description) {
+        if (empty($description)) {
+            throw new InvalidArgumentException("la description ne peut pas être null ou vide");
+        }
+        $this->nom;
+    }
+
+    public function setHeure(int $heure) {
+        if ($heure < 8 || $heure > 15) {
+            throw new InvalidArgumentException("l'heure doit être entre 8 et 15");
+        }
+        $this->Heure = $heure;
+    }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
