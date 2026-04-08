@@ -164,7 +164,7 @@ $allPlayer = [
                 <img src=" . $value->getImage() . "alt=" . $value ->getAlt() . ">
                 <h3>" . $value->getName() . "</h3>
 
-                <p><strong>Présence :</strong>" . $value->getheure1() . "h" . $value->getheure2() . "h  (" . $value->getScense() . ") .</p>
+                <p><strong>Présence :</strong>" . $value->getheure1() . "h - " . $value->getheure2() . "h  (" . $value->getScense() . ") .</p>
                 <p>" . $value->getDescription() . "</p>
             </a>";
             }

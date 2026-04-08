@@ -114,7 +114,7 @@ $exemplePresta = [
                 echo "<a href='prestationEx.php' class='vignette'>
                 <img src='img/video-games-1557358_1280.jpg' alt='Photo de manette'>
                 <h3>" . $value->getTitre() . "</h3>
-                <p><strong>Scène :</strong>" . $value->getScene() . "</p>
+                <p><strong>Scène : </strong>" . $value->getScene() . "</p>
                 <p>" . $value->getDescription() . "</p>
                 </a>";
 
