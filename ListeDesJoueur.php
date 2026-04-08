@@ -3,18 +3,21 @@ class Joueur
 {
     private string $nom;
     private int $Heure1;
-
+    private String $alt;
+    private String $Photo;
     private int $Heure2;
     private string $scene;
     private string $description;
 
-    public function __construct(string $nom, string $scene, int $heure1, int $heure2, string $description)
+    public function __construct(string $nom, string $scene,String $alt,String $image, int $heure1, int $heure2, string $description)
     {
         $this->setNom($nom);
         $this->setScene($scene);
         $this->setDescription($description);
         $this->setHeure1($heure1);
         $this->setHeure2($heure2);
+        $this->setImage($image);
+        $this->setAlt($image);
     }
 
     public function setNom(string $nom)
@@ -56,6 +59,19 @@ class Joueur
         }
         $this->Heure2 = $heure;
     }
+
+    public function setImage(String $image) {
+        if(empty($image)) {
+            throw new InvalidArgumentException("l'image ne peut pas être null ou vide");
+        }
+        $this->Photo = $image;
+    }
+    public function setAlt(String $alt) {
+        if(empty($alt)) {
+            throw new InvalidArgumentException("le alt ne peut pas être null ou vide");
+        }
+        $this->alt = $alt;
+    }
     public function getheure1(): int
     {
         return $this->Heure1;
@@ -76,14 +92,20 @@ class Joueur
     {
         return $this->description;
     }
+    public function getImage(): String {
+        return $this->Photo;
+    }
+    public function getAlt(): String {
+        return $this->alt;
+    }
 
 
 }
 $allPlayer = [
-    new Joueur("jean permatete", "valorant", 8, 10, "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
-    new Joueur("Eva mChercherUneBierre", "csgo", 10, 12, "joueuse competitive elle est la pour révolutionner l'art de l'awp sur csgo"),
-    new Joueur("JuJuCactus", "Overwatch", 13, 15, "Joueuse Dps sur Overwatch, elle est venue parce qu'il manquait des joueurs"),
-    new Joueur("XxGalaxyDestroyerxX", "Overwatch", 13, 15, "Joueur support sur overwatch il est la pour concurencer tout les support de ce tournoi")
+    new Joueur("jean permatete", "valorant","'Portrait de Jean Permatête'","'img/racing-6249392_1280.jpg'", 8, 10, "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
+    new Joueur("Eva mChercherUneBierre", "csgo","'Pas d'image trouvée'","'img/question-svgrepo-com.svg'", 10, 12, "joueuse competitive elle est la pour révolutionner l'art de l'awp sur csgo"),
+    new Joueur("JuJuCactus", "Overwatch","'Portrait de Jean Permatête'","'img/racing-6249392_1280.jpg'", 13, 15, "Joueuse Dps sur Overwatch, elle est venue parce qu'il manquait des joueurs"),
+    new Joueur("XxGalaxyDestroyerxX", "Overwatch","'Portrait de Jean Permatête'","'img/racing-6249392_1280.jpg'", 13, 15, "Joueur support sur overwatch il est la pour concurencer tout les support de ce tournoi")
 ];
 ?>
 <!DOCTYPE html>
@@ -139,7 +161,7 @@ $allPlayer = [
             foreach ($allPlayer as $value) {
                 echo "<a href='Joueur.php' class='vignette'>
 
-                <img src='img/racing-6249392_1280.jpg' alt='Portrait de Jean Permatête'>
+                <img src=" . $value->getImage() . "alt=" . $value ->getAlt() . ">
                 <h3>" . $value->getName() . "</h3>
 
                 <p><strong>Présence :</strong>" . $value->getheure1() . "h" . $value->getheure2() . "h  (" . $value->getScense() . ") .</p>

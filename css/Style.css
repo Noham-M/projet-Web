@@ -147,10 +147,17 @@ caption {
     font-size: x-large;
     box-shadow: 0 -5px 15px -2px #79CFD9;
 }
-th, td {
+th {
     border: #79CFD9 solid 2px;
-    padding: 0.5rem;
-    transition: 0.2s ease;
+}
+td {
+    border: #79CFD9 solid 2px;
+}
+td a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.5;
 }
 td:hover {
     box-shadow: #79CFD9 0 0 20px;
