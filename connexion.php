@@ -1,3 +1,11 @@
+<?php
+$ConnectEmail = '';
+$Email = '';
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $ConnectEmail = $_POST['user_mail'] ?? "";
+    $ConnectPassWord = $_POST['user_password'] ?? "";
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 

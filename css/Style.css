@@ -89,6 +89,7 @@ a {
 }
 p {
     padding: 0.5rem;
+    
 }
 footer {
     display: flex;
@@ -175,6 +176,10 @@ form {
     border-radius: 15px;
     background-color: #051926;
 }
+form p {
+    color: red;
+    font-size: larger;
+}
 fieldset {
     border: none;
 }
@@ -216,7 +221,7 @@ button:hover {
 div.ListeVignette {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     gap: 2rem;
     padding: 2rem;
     flex-wrap: wrap;

@@ -36,22 +36,42 @@ class Inscription
     {
         return $this->Password;
     }
+    public function tostring(): string 
+    {
+         return $this->Nom . " + " . $this->Prenom;
+    }
 
 
 }
+$error = [];
+
 $Utilisateur = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$Nom = $_POST['user_name'] ?? "";
-$Prenom = $_POST['user_surname'] ?? "";
-$Email = $_POST['user_email'] ?? "";
-if (!filter_var($Email,FILTER_VALIDATE_EMAIL)) {
-    $Email = "";
-    echo "l'Email n'est pas valide";
-}
-$Password = $_POST['user_password'] ?? "";
-$Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
+    $Nom = $_POST['user_name'] ?? "";
+    if (empty($Nom)) {
+        $error['nom'] = "le nom est obligatoire";
+    }
+    $Prenom = $_POST['user_surname'] ?? "";
+    if (empty($Prenom)) {
+        $error['prenom'] = "le prénom est obligatoire";
+    }
+    $Email = $_POST['user_email'] ?? "";
+    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+        $error['Email'] = "l'email n'est pas valide";
+    } else if (empty($Email)) {
+        $error['Email'] = "L'email est obligatoire";
+    }
+    $Password = $_POST['user_password'] ?? "";
+    if (empty($Password)) {
+        $error['password'] = "Le mot de passe est obligatoire";
+    }
+    if (empty($error)) {
+        $success = true;
+    }
+    $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
 
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -75,6 +95,10 @@ $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
 
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="user_name" placeholder="Votre nom..." required>
+                <?php if (isset($error['nom'])) {
+                    echo "<span>" . $error['nom'] . "<span>";
+                }
+                ?>
 
 
                 <label for="surname">Prénom :</label>
@@ -93,8 +117,14 @@ $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
                 <input type="password" id="passwordconfirm" name="user_password_confirm" placeholder="Confirmation">
 
                 <button type="submit">Envoyer</button>
+                <?php
+                if ($success) {
+                    echo "<p>" . $Utilisateur->tostring() . "<p>";
+                }
+                ?>
             </fieldset>
         </form>
+
     </main>
     <?php
     require_once "app/view/footer.php";
