@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journée Tournoi LAN jeux-vidéo</title>
-    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="assets/css/Style.css">
 </head>
 
 <body>
