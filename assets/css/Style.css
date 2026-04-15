@@ -369,6 +369,7 @@ article.exemple a:hover {
     top: 60%;
     height: 20%;
     background-color: #051926;
+    font-size: x-large;
     transition: ease 0.4s;
 }
 span {
@@ -436,6 +437,7 @@ span {
     .pop-up {
         width: 50%;
         top: 80%;
+        font-size: large;
     }
 
 

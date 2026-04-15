@@ -1,48 +1,4 @@
 <?php
-class Inscription
-{
-    private string $Nom;
-    private string $Prenom;
-    private string $Email;
-    private string $Password;
-    public function __construct(string $Nom, string $Prenom, string $Email, string $Password)
-    {
-        if (!empty($Nom)) {
-            $this->Nom = $Nom;
-        }
-        if (!empty($Prenom)) {
-            $this->Prenom = $Prenom;
-        }
-        if (!empty($Email)) {
-            $this->Email = $Email;
-        }
-        if (!empty($Password)) {
-            $this->Password = $Password;
-        }
-    }
-    public function getNom(): string
-    {
-        return $this->Nom;
-    }
-    public function getPrenom(): string
-    {
-        return $this->Prenom;
-    }
-    public function getEmail(): string
-    {
-        return $this->Email;
-    }
-    public function getPassword(): string
-    {
-        return $this->Password;
-    }
-    public function tostring(): string
-    {
-        return $this->Nom . " + " . $this->Prenom;
-    }
-
-
-}
 $error = [];
 
 $success = null;
@@ -74,8 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($error)) {
         $success = true;
     }
-   
-    $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
 
 }
 
@@ -101,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="email">E-mail :</label>
                 <input type="email" id="email" name="user_email" placeholder="Votre adresse mail" required>
                
-
 
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="user_password" placeholder="Votre mot de passe">
