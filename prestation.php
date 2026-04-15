@@ -103,6 +103,10 @@ $exemplePresta = [
                         <option value="15h">15h-18h</option>
                     </select>
                 </div>
+                <div class="filterGroup">
+                    <label for="prograPresta">Afficher prestation programmé</label>
+                    <input type="checkbox" id="prograPresta"> 
+                </div>
 
                 <button type="submit">Rechercher</button>
             </fieldset>

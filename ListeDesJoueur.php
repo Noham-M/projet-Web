@@ -150,7 +150,10 @@ $allPlayer = [
                         <option value="15h">15h-18h</option>
                     </select>
                 </div>
-
+                <div class="filterGroup">
+                    <label for="prograPresta">Afficher artiste programmé</label>
+                    <input type="checkbox" id="prograPresta"> 
+                </div>
                 <button type="submit" id="bouttonFiltre">Rechercher</button>
 
             </fieldset>

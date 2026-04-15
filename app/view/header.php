@@ -1,6 +1,6 @@
 <header>
     <section id="Titre">
-        <img src="img/question-svgrepo-com.svg" alt="Logo de l'événement">
+        <img src="assets/img/question-svgrepo-com.svg" alt="Logo de l'événement">
         <h1>Journée tournoi LAN jeux-vidéo</h1>
         <?php if (isset($Utilisateur)) {
             echo '<p>Utilisateur : ' . $Utilisateur->getNom() . '</p>';

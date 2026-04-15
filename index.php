@@ -22,7 +22,7 @@
                 N'hésitez pas à venir soutenir les joueurs présents sur place.
             </p>
             </div>
-            <img src="img/OIP.png" alt="Aperçu du tournoi e-sport">
+            <img src="assets/img/OIP.png" alt="Aperçu du tournoi e-sport">
         </article>
         <table>
             <caption>Programme des prestations</caption>
