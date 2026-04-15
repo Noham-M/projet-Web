@@ -85,7 +85,7 @@ nav a:hover {
 ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 1rem;
     margin: 0.7rem;
 }
 
@@ -357,6 +357,24 @@ article.exemple a {
 article.exemple a:hover {
     text-decoration: underline;
 }
+.pop-up {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #79CFD9 solid 2px;
+    box-shadow: #79CFD9 0 0 20px;
+    border-radius: 15px ;
+    width: 20%;
+    top: 60%;
+    height: 20%;
+    background-color: #051926;
+    transition: ease 0.4s;
+}
+span {
+    color: red;
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -366,6 +384,10 @@ article.exemple a:hover {
 
     ul {
         flex-direction: column;
+        
+    }
+    ul a {
+        font-size: smaller;
     }
 
     #Titre {
@@ -410,6 +432,10 @@ article.exemple a:hover {
 
     img {
         width: 100%;
+    }
+    .pop-up {
+        width: 50%;
+        top: 80%;
     }
 
 

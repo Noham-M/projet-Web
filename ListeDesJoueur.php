@@ -102,7 +102,7 @@ class Joueur
 
 }
 $allPlayer = [
-    new Joueur("jean permatete", "valorant","'Portrait de Jean Permatête'","'img/racing-6249392_1280.jpg'", 8, 10, "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
+    new Joueur("jean permatete", "valorant","'Portrait de Jean Permatête'","'   img/racing-6249392_1280.jpg'", 8, 10, "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
     new Joueur("Eva mChercherUneBierre", "csgo","'Pas d'image trouvée'","'img/question-svgrepo-com.svg'", 10, 12, "joueuse competitive elle est la pour révolutionner l'art de l'awp sur csgo"),
     new Joueur("JuJuCactus", "Overwatch","'Portrait de Jean Permatête'","'img/racing-6249392_1280.jpg'", 13, 15, "Joueuse Dps sur Overwatch, elle est venue parce qu'il manquait des joueurs"),
     new Joueur("XxGalaxyDestroyerxX", "Overwatch","'Portrait de Jean Permatête'","'img/racing-6249392_1280.jpg'", 13, 15, "Joueur support sur overwatch il est la pour concurencer tout les support de ce tournoi")

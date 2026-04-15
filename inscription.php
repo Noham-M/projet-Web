@@ -36,14 +36,16 @@ class Inscription
     {
         return $this->Password;
     }
-    public function tostring(): string 
+    public function tostring(): string
     {
-         return $this->Nom . " + " . $this->Prenom;
+        return $this->Nom . " + " . $this->Prenom;
     }
 
 
 }
 $error = [];
+
+$success = null;
 
 $Utilisateur = null;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -65,26 +67,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($Password)) {
         $error['password'] = "Le mot de passe est obligatoire";
     }
+    $passwordConfirm = $_POST['user_password_confirm'] ?? "";
+     if ($passwordConfirm != $Password) {
+        $error['passwordconfirm'] = "la confirmation ne correspond pas au mot de passe";
+     }
     if (empty($error)) {
         $success = true;
     }
+   
     $Utilisateur = new Inscription($Nom, $Prenom, $Email, $Password);
 
 }
 
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journée Tournoi LAN jeux-vidéo</title>
-    <link rel="stylesheet" href="assets/css/Style.css">
-</head>
-
-<body>
     <?php
     require_once "app/view/header.php";
     ?>
@@ -95,10 +92,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="user_name" placeholder="Votre nom..." required>
-                <?php if (isset($error['nom'])) {
-                    echo "<span>" . $error['nom'] . "<span>";
-                }
-                ?>
 
 
                 <label for="surname">Prénom :</label>
@@ -107,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <label for="email">E-mail :</label>
                 <input type="email" id="email" name="user_email" placeholder="Votre adresse mail" required>
+               
 
 
                 <label for="password">Mot de passe :</label>
@@ -115,15 +109,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <label for="passwordconfirm">Confirmation du mot de passe :</label>
                 <input type="password" id="passwordconfirm" name="user_password_confirm" placeholder="Confirmation">
-
-                <button type="submit">Envoyer</button>
-                <?php
-                if ($success) {
-                    echo "<p>" . $Utilisateur->tostring() . "<p>";
+                 <?php if (isset($error['Email'])) {
+                        echo "<span>" . $error['passwordconfirm'] . "</span>";
                 }
                 ?>
+
+                <button type="submit">Envoyer</button>
             </fieldset>
         </form>
+        <?php
+        if ($success) {
+            echo "<div class='pop-up'>vous êtes connecté</div>";
+        }
+        ?>
 
     </main>
     <?php
