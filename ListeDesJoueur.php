@@ -1,10 +1,10 @@
 <?php
 require_once "app/Model/utilisateur.php";
 $allPlayer = [
-    new Joueur("jean", "valorant","'img/racing-6249392_1280.jpg'", 8,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
-    new Joueur("Eva mChercherUneBierre", "csgo","'img/racing-6249392_1280.jpg'", 10,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "joueuse competitive elle est la pour révolutionner l'art de l'awp sur csgo"),
-    new Joueur("JuJuCactus", "Overwatch","'img/racing-6249392_1280.jpg'", 13,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "Joueuse Dps sur Overwatch, elle est venue parce qu'il manquait des joueurs"),
-    new Joueur("XxGalaxyDestroyerxX", "Overwatch","'img/racing-6249392_1280.jpg'", 13,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "Joueur support sur overwatch il est la pour concurencer tout les support de ce tournoi")
+    new Joueur("jean", "valorant","'img/racing-6249392_1280.jpg'", 1,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "Petit joueur de Valorant venant de Liège, c'est l'un des meilleurs supports du pays."),
+    new Joueur("Eva mChercherUneBierre", "csgo","'img/racing-6249392_1280.jpg'", 2,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "joueuse competitive elle est la pour révolutionner l'art de l'awp sur csgo"),
+    new Joueur("JuJuCactus", "Overwatch","'img/racing-6249392_1280.jpg'", 4,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "Joueuse Dps sur Overwatch, elle est venue parce qu'il manquait des joueurs"),
+    new Joueur("XxGalaxyDestroyerxX", "Overwatch","'img/racing-6249392_1280.jpg'", 4,"permatete","jean permatete","jeanPermatete@gmail.com","ggggg", "Joueur support sur overwatch il est la pour concurencer tout les support de ce tournoi")
 ];
 ?>
 <!DOCTYPE html>
@@ -66,7 +66,7 @@ $allPlayer = [
                 <img src=" . $value->getImage() . "alt='portrait du joueur'>
                 <h3>" . $value->getPseudo() . "</h3>
 
-                <p><strong>Présence :</strong>" . $value->getheure1() . "h (" . $value->getScene() . ") .</p>
+                <p><strong>Présence :</strong>" . $value->getheure()->toString() ."(" . $value->getScene() . ") .</p>
                 <p>" . $value->getDescription() . "</p>
             </a>";
             }
