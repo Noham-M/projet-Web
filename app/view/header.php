@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="ListeDesJoueur.php">Liste des joueurs</a></li>
-                <li><a class="current" href="prestation.php">Prestations</a></li>
+                <li><a class="current" href="listePrestation.php">Prestations</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
         </nav>

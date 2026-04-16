@@ -28,6 +28,7 @@ class Heure {
             case 4:
                 $this->Heure1 = 13;
                 $this->Heure2 = 15;
+                break;
             default:
                 $this->Heure1 = 15;
                 $this->Heure2 = 18;
