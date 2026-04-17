@@ -15,7 +15,7 @@
     <main>
 
         <article id="TournoiBO3" class="exemple">
-            <img src="img/video-games-1557358_1280.jpg" alt="image de manette">
+            <img src="assets/img/video-games-1557358_1280.jpg" alt="image de manette">
             <section id="descripTournoi">
                 <h2>Tournoi valorant en BO3</h2>
                 <h3>jeu : Valorant</h3>

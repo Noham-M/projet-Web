@@ -1,6 +1,7 @@
 <?php
 require_once "Heure.php";
-class Joueur
+require_once "utilisateur.php";
+class Joueur extends Utilisateur
 {
     
     private string $pseudo;
@@ -9,9 +10,9 @@ class Joueur
     private string $scene;
     private string $description;
 
-    public function __construct( string $scene, string $image, int $heure,  string $pseudo, string $description)
+    public function __construct(string $nom, string $scene, string $image, int $heure,string $prenom, string $pseudo, string $Email, string $password, string $description)
     {
-       
+        parent::__construct($nom, $prenom , $Email,$password);
         $this->setScene($scene);
         $this->setDescription($description);
         $this->setHeure1($heure);

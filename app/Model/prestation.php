@@ -4,12 +4,14 @@ class Prestation
     private string $titre;
     private string $scene;
     private string $description;
+    private string $image;
 
-    public function __construct(string $titre, string $scene, string $description)
+    public function __construct(string $titre, string $scene, string $description, string $image)
     {
         $this->setTitre($titre);
         $this->setScene($scene);
         $this->setDescription($description);
+        $this->setImage($image);
     }
     public function setTitre(string $titre)
     {
@@ -32,6 +34,13 @@ class Prestation
         }
         $this->description = $description;
     }
+    public function setImage(string $image)
+    {
+        if (empty($image) || !str_starts_with($image, "assets/img/")) {
+            throw new InvalidArgumentException("l'image doit commencer par assets/img/ et ne doit pas être vide");
+        }
+        $this->image = $image;
+    }
     public function getTitre(): string
     {
         return $this->titre;
@@ -45,6 +54,10 @@ class Prestation
     public function getDescription(): string
     {
         return $this->description;
+    }
+    public function getImage(): string
+    {
+        return $this->image;
     }
 
 

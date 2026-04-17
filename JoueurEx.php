@@ -15,10 +15,9 @@
     <main>
         <h2>Jean Permatête</h2>
         <article id="presentation" class="exemple">
-            <img src="img/racing-6249392_1280.jpg" alt="photo de profil du joueur">
+            <img src="assets/img/racing-6249392_1280.jpg" alt="photo de profil du joueur">
             <div id="biographie">
             <h3>jeu de prédilection : valorant</h3>
-            <h3>age : 25ans</h3>
             <p><strong>biographie : </strong>jeune talent venant de Liège Jean Permatête du haut de ses 25ans vien montrer pourquoi on le surnomme le meilleur support de wallonie </p>
             <a href="prestationEx.php">prestation 1 : scène valorant (8h-10h) </a>
             <a href="prestationEx.php">prestation 2 : espace détente (12h-13h) </a>

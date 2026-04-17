@@ -4,11 +4,11 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
     $actual = $_GET['Lieu'] ?? "";
 }
 $exemplePresta = [
-    new Prestation("6v6 Overwatch Qp", "Overwatch", "2 ou 3 match rapide en 6v6 sur overwatch"),
-    new Prestation("Mini tournoi de 4 équipe", "valorant", "4 équipe de 5 s'affronte en B03 sur valorant"),
-    new Prestation("Mini tournoi de 4 équipe", "csgo", "4 équipe de 5 s'affronte en B03 sur CS2"),
-    new Prestation("presentation jeu de l'année", "Zen", "présentation des jeu de l'année 2025"),
-    new Prestation("Mini Tournoi 5v5", "Overwatch", "Mini tournoi en 5v5 sur Overwatch")
+    new Prestation("6v6 Overwatch Qp", "Overwatch", "2 ou 3 match rapide en 6v6 sur overwatch","assets/img/video-games-1557358_1280.jpg"),
+    new Prestation("Mini tournoi de 4 équipe", "valorant", "4 équipe de 5 s'affronte en B03 sur valorant","assets/img/video-games-1557358_1280.jpg"),
+    new Prestation("Mini tournoi de 4 équipe", "csgo", "4 équipe de 5 s'affronte en B03 sur CS2","assets/img/video-games-1557358_1280.jpg"),
+    new Prestation("presentation jeu de l'année", "Zen", "présentation des jeu de l'année 2025","assets/img/video-games-1557358_1280.jpg"),
+    new Prestation("Mini Tournoi 5v5", "Overwatch", "Mini tournoi en 5v5 sur Overwatch","assets/img/video-games-1557358_1280.jpg")
 ];
 
 ?>
@@ -67,7 +67,7 @@ $exemplePresta = [
             <?php
             foreach ($exemplePresta as $value) {
                 echo "<a href='prestationEx.php' class='vignette'>
-                <img src='img/video-games-1557358_1280.jpg' alt='Photo de manette'>
+                <img src='". $value->getImage() . "'alt='photo de la prestation'>
                 <h3>" . $value->getTitre() . "</h3>
                 <p><strong>Scène : </strong>" . $value->getScene() . "</p>
                 <p>" . $value->getDescription() . "</p>
